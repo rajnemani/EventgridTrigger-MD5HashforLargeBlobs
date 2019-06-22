@@ -32,7 +32,6 @@ namespace hashfunctionproject
             var startTime = DateTime.Now;
             var createdEvent = ((JObject)eventGridEvent.Data).ToObject<StorageBlobCreatedEventData>();
             log.LogInformation(eventGridEvent.Data.ToString()); 
-            //var url = ((JObject)eventGridEvent.Data).First.Next.Next.Next.Next.Next.Next.Next.First.ToString();
             
             var storageAccount = CloudStorageAccount.Parse(BLOB_STORAGE_CONNECTION_STRING);
             var blobClient = storageAccount.CreateCloudBlobClient();
